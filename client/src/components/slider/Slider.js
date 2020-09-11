@@ -54,12 +54,13 @@ const Sliderr = () => {
   const change = (e) => {
     const results = window.matchMedia("(max-width:760px)");
     if (results.matches == false) {
-      if (e.pageX < 624) {
+      if (e.pageX < 845) {
         previous();
-      } else if (e.pageX > 624) {
+      } else if (e.pageX > 845) {
         next();
       }
     }
+    
   };
 
   //display components with conditions

@@ -18,10 +18,10 @@ mongoose.connect(
 //importing the routes
 const ImageRoute = require("./routes/Images");
 
-//using the routes
-app.get("/", (req, res) => {
-  res.send("we are on home");
-});
+// //using the routes
+// app.get("/", (req, res) => {
+//   res.send("we are on home");
+// });
 
 app.use("/images", ImageRoute);
 
