@@ -24,7 +24,7 @@ const Sliderr = () => {
 
   //to get the data from  database
   const getData = async () => {
-    fetch("http://localhost:5000/images")
+    fetch("/images")
       .then((res) => res.json())
       .then((allProducts) =>
         setDataa(
