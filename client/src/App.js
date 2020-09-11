@@ -5,22 +5,18 @@ import M from "materialize-css/dist/js/materialize.min.js";
 import Sliderr from "./components/slider/Slider.js";
 
 import "./App.css";
+import Loading from "./components/loading/Loading.js";
+import Nav from "./components/navbar/Nav.js";
 
 function App() {
   // const [response, setResponse] = useState("");
   useEffect(() => {
     //initializing materialize css JS
     M.AutoInit();
-
-    // const socket = socketIOClient("http://localhost:5000/images");
-    // socket.on("FromAPI", (data) => {
-    //   setResponse(data);
-    //   console.log(response);
-    // });
   }, []);
   return (
     <div className="App">
-      <h1>hello bnry</h1>
+      <Nav />
       <Sliderr />
     </div>
   );

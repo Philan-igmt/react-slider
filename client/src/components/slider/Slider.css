@@ -13,12 +13,6 @@ h3 {
 .slider div {
   height: auto;
 }
-* {
-  margin: 0;
-  padding: 10px;
-
-  box-sizing: border-box;
-}
 
 .image {
   margin: 0;
