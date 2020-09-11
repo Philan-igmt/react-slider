@@ -8,8 +8,8 @@ import ReactTooltip from "react-tooltip";
 
 const Sliderr = () => {
   const [dataa, setDataa] = useState([]);
-  const [indexx, setIndexx] = useState("");
   const [loading, setLoading] = useState(true);
+  // const [myIndex, setMyIndex] = useState("");
 
   // To access underlying DOM object for the slider
   const sliderRef = useRef();
@@ -35,10 +35,12 @@ const Sliderr = () => {
       );
   };
 
+  //to call the function once after reload
   useEffect(() => {
     getData();
   }, []);
 
+  //setting the slider properties
   const settings = {
     dots: false,
     infinite: true,
@@ -48,13 +50,19 @@ const Sliderr = () => {
     adaptiveHeight: true,
   };
 
+  //image change slide on click 1/2
   const change = (e) => {
-    // if (e.clientX > 476) {
-    //   next();
-    // }
-    console.log(e.maxWidth);
+    const results = window.matchMedia("(max-width:760px)");
+    if (results.matches == false) {
+      if (e.pageX < 624) {
+        previous();
+      } else if (e.pageX > 624) {
+        next();
+      }
+    }
   };
 
+  //display components with conditions
   if (loading) {
     return <Loading />;
   } else {
@@ -75,10 +83,7 @@ const Sliderr = () => {
                       alt={pic.name}
                       className="image"
                       onClick={change}
-                      onMouseOver={() => {
-                        setIndexx(String(index - 1));
-                        console.log(indexx);
-                      }}
+                      // onMouseOver={setMyIndex(String(index))}
                     />
                   </div>
                   <div className="card-content">
@@ -90,17 +95,12 @@ const Sliderr = () => {
             );
           })}
         </Slider>
+        <ReactTooltip />
 
-        <button
-          className="btn red tooltipped"
-          // data-position="bottom"
-          // data-tooltip="dssssss"
-          onClick={previous}
-          data-tip="hello world"
-        >
+        <button className="btn red" data-tip=":(" onClick={previous}>
           Prev
         </button>
-        <button className="btn green" onClick={next}>
+        <button className="btn green" data-tip=":(" onClick={next}>
           Next
         </button>
       </div>

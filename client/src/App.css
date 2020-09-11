@@ -2,7 +2,7 @@
   width: 50%;
 }
 .App {
-  /* background-color: black; */
+  background-color: black;
   height: 100vh;
   display: flex;
   flex-direction: column;
