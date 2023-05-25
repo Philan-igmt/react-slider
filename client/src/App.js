@@ -16,8 +16,9 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <Nav />
-      <Sliderr />
+      {/* <Nav /> */}
+      {/* <Sliderr /> */}
+      <h1 style={{color:'white'}}>Something</h1>
     </div>
   );
 }
